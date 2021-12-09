@@ -1,0 +1,39 @@
+body {
+    text-align: center;
+    background-color: wheat;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+  
+  h1 {
+    width: auto;
+    font-size: 5rem;
+    padding: 100px;
+    color: white;
+    background-color: navy;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 300px;
+    border: solid 4px navy;
+    border-radius: 5px;
+    background-color: lightgray;
+    padding: 20px;
+    margin: 40px;
+  }
+  
+  .card-head {
+    background-color: darkgray;
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .container {
+    text-align: left;
+  }
