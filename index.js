@@ -1,7 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const path = require('path');
-// const jest = require('jest');
+const jest = require('jest');
 
 const Employee = require('./Assets/employee');
 const Manager = require('./Assets/manager');

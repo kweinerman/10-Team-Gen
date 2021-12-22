@@ -4,12 +4,11 @@
   "description": "Use this for team building cards!",
   "main": "index.js",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.10",
-    "inquirer": "^8.1.2",
-    "fs": "^0.0.1-security",
-    "open": "^8.2.1"
+    "inquirer": "^8.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
   "scripts": {
     "test": "jest"
   },
