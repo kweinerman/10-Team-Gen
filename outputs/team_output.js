@@ -1,89 +1,108 @@
-const headContent = 
-`<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Development Team</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <h1>Development Team</h1>
-  <section class="cards">`;
-const footContent = 
-` </section>
-</body>
-</html>`;
-
-let teamContent = ``;
-
-function renderManager (person) {
-  let newContent = 
-    `<div class="card manager">
-      <div class="card-head">
-        <h2>${person.name}</h2>
-        <h3>${person.role}</h3>
+module.exports = team => {
+  return `
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>Team Profile Generator</title>
+      <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-12 jumbotron text-white mb-3 bg-primary">
+                  <h1 class="text-center">The Dream Team</h1>
+              </div>
+          </div>
       </div>
       <div class="container">
-        <p>Employee ID: ${person.id}</p>
-        <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
-        <p>Office Number: ${person.officeNumber}</p>
+          <div class="row">
+              <div class="main-section col-12 d-flex justify-content-center">
+                  ${createProfile(team)}
+              </div>
+          </div>
       </div>
-   </div>`;
+  </body>
+  </html>
+  `;
+};
 
-   teamContent += newContent;
-}
-
-function renderIntern (person) {
-  let newContent = 
-  `<div class="card intern">
-      <div class="card-head">
-        <h2>${person.name}</h2>
-        <h3>${person.role}</h3>
+const createProfile = team => {
+  const createManager = manager => {
+      return `
+      <div class="card employee-card manager-card">
+          <div class="card-header text-center bg-primary text-white">
+              <h3 class="card-title">${manager.getName()}</h3>
+              <h4 class="card-title">Title: ${manager.getRole()}</h4>
+          </div>
+          <div class="card-body bg-warning">
+              <ul class="list-group text-dark">
+                  <li class="list-group-item">ID: ${manager.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                  <li class="list-group-item">Office number: <a href="tel:${manager.getofficeNumber()}">${manager.getofficeNumber()}</a></li>
+              </ul>
+          </div>
       </div>
-      <div class="container">
-        <p>Employee ID: ${person.id}</p>
-        <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
-        <p>School: ${person.school}</p>
+      `;
+  };
+
+  const createEngineer = engineer => {
+      return `
+      <div class="card employee-card engineer-card">
+          <div class="card-header text-center bg-info text-white">
+              <h3 class="card-title">${engineer.getName()}</h3>
+              <h4 class="card-title">Title: ${engineer.getRole()}</h4>
+          </div>
+          <div class="card-body">
+              <ul class="list-group text-dark">
+                  <li class="list-group-item">ID: ${engineer.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+                  <li class="list-group-item">GitHub: <a href="https://github.com/${engineer.getengineerGithub()}" target="_blank" rel="noopener noreferrer">${engineer.getengineerGithub()}</a></li>
+              </ul>
+          </div>
       </div>
-    </div>`;
+      `;
+  };
 
-  teamContent += newContent;
-}
-
-function renderEngineer (person) {
-  let newContent = 
-  `<div class="card engineer">
-      <div class="card-head">
-        <h2>${person.name}</h2>
-        <h3>${person.role}</h3>
+  const createIntern = intern => {
+      return `
+      <div class="card employee-card intern-card">
+          <div class="card-header text-center bg-info text-white">
+              <h3 class="card-title">${intern.getName()}</h3>
+              <h4 class="card-title">Title: ${intern.getRole()}</h4>
+          </div>
+          <div class="card-body">
+              <ul class="list-group text-dark">
+                  <li class="list-group-item">ID: ${intern.getId()}</li>
+                  <li class="list-group-item">Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+                  <li class="list-group-item">School: ${intern.getinternSchool()}</li>
+              </ul>
+          </div>
       </div>
-      <div class="container">
-        <p>Employee ID: ${person.id}</p>
-        <p>Email: <a href="mailto:${person.email}">${person.email}</a></p>
-        <p>GitHub Username: <a target="__blank" href="https://github.com/${person.github}">${person.github}</a></p>
-      </div>
-    </div>`;
+      `;
+  };
 
-  teamContent += newContent;
-}
+  const html = [];
 
-function generateHTML(arr) {
-  arr.forEach(element => {
-    switch (element.role) {
-      case "Manager": renderManager(element); break;
-      case "Engineer": renderEngineer(element); break;
-      case "Intern": renderIntern(element); break;
-      }
-  });
-  
-  const fullContent = 
-    `${headContent}
-    ${teamContent}
-    ${footContent}`;
-  return fullContent;
-}
+  html.push(team
+      .filter(employee => employee.getRole() === 'Manager')
+      .map(manager => createManager(manager))
+  );
+  html.push(team
+      .filter(employee => employee.getRole() === 'Engineer')
+      .map(engineer => createEngineer(engineer))
+      .join("")
+  );
+  html.push(team
+      .filter(employee => employee.getRole() === 'Intern')
+      .map(intern => createIntern(intern))
+      .join("")
+  );
 
+  return html.join("");
 
-module.exports = { generateHTML };
+};

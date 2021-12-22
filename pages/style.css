@@ -1,7 +1,8 @@
 body {
     text-align: center;
-    background-color: wheat;
+    background-color: blue;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
   }
   
   h1 {
@@ -9,7 +10,7 @@ body {
     font-size: 5rem;
     padding: 100px;
     color: white;
-    background-color: navy;
+    background-color: black;
   }
   
   .cards {
@@ -22,13 +23,13 @@ body {
     width: 300px;
     border: solid 4px navy;
     border-radius: 5px;
-    background-color: lightgray;
+    background-color: whitesmoke;
     padding: 20px;
     margin: 40px;
   }
   
   .card-head {
-    background-color: darkgray;
+    background-color: grey;
     color: white;
     text-align: center;
     padding: 15px;

@@ -1,24 +1,30 @@
-
-   
 {
-    "name": "Team-Gen-10",
-    "version": "1.0.0",
-    "description": "Team Gen",
-    "main": "index.js",
-    "directories": {
-      "lib": "lib",
-      "test": "tests"
-    },
-    "scripts": {
-      "test": "jest"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "jest": "^24.9.0"
-    },
-    "dependencies": {
-      "inquirer": "^8.1.2"
-    }
-  }
+  "name": "team-builder",
+  "version": "1.0.0",
+  "description": "Use this for team building cards!",
+  "main": "index.js",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "inquirer": "^8.1.2",
+    "fs": "^0.0.1-security",
+    "open": "^8.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kweinerman/10-Team-Gen.git"
+  },
+  "keywords": [
+    "team",
+    "builder"
+  ],
+  "author": "Kurt Weinerman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kweinerman/10-Team-Gen/issues"
+  },
+  "homepage": "https://github.com/kweinerman/10-Team-Gen#readme"
+}
