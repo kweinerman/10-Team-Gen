@@ -17,3 +17,7 @@ From there you have to determine the employees role - manager, engineer, employe
 That will stem a few other questions for the user
 
 Once done it will ask you if you want to update a new employee 
+
+## Video
+
+Video Link here: https://drive.google.com/file/d/1V7-CA7Knxnw5kAWgT852OyeVW5oVbQly/view?usp=sharing
